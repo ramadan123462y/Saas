@@ -1,0 +1,37 @@
+<script>
+    $(document).ready(function () {
+        $(".increase").click(function () {
+            var row_q = $(this).closest(".qtySelector");
+            var val_q = row_q.children(".qtyValue").val();
+            var id = row_q.children(".id").val();
+            alert(id);
+            // var row = $(this).closest(".tr");
+            // console.log(row.find(".total").text("dgj"));
+            // row.children(".total").text(val_q);
+
+            $.ajax({
+                url: "{{ url('/increase_item/') }}",
+                type: "GET",
+                dataType: "json",
+                success: function (response) {
+                    // Handle the successful response here
+                    $("#result").html(
+                        "<p>Name: " +
+                            response.name +
+                            "</p>" +
+                            "<p>Age: " +
+                            response.age +
+                            "</p>" +
+                            "<p>Occupation: " +
+                            response.occupation +
+                            "</p>"
+                    );
+                },
+                error: function (xhr, status, error) {
+                    // Handle errors here
+                    console.error(xhr.responseText);
+                },
+            });
+        });
+    });
+</script>

@@ -1,15 +1,5 @@
 <div>
-    {{-- <div>
-        @php
-            $saller = App\Http\Helpers\store_saller()
-                ->saller()
-                ->with('unreadNotifications')
-                ->withCount('unreadNotifications')
-                ->first();
-            $unreadNotifications = $saller->unreadNotifications()->limit(5)->get();
-            $unreadNotificationsCount = $saller->unread_notifications_count;
-        @endphp
-    </div> --}}
+
 
 
     <li class="nav-item dropdown">

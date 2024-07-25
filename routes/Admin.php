@@ -47,7 +47,7 @@ Route::group(
                 Route::get('/stores', 'stores');
                 Route::get('transaction_subscrubtion', 'transaction_subscrubtion');
 
-                // Route::group(['middleware' => 'role:super_admin,admin'], function () {
+          
                 Route::prefix('/role')->controller(RoleController::class)->group(function () {
                     Route::get('/', 'index');
                     Route::get('/permissions/{id_role}', 'permissions');
@@ -56,8 +56,7 @@ Route::group(
 
                     Route::get('delete/{id}', 'delete');
                 });
-                // });
-                // Route::group(['middleware' => 'role:super_admin,admin'], function () {
+
                 Route::prefix('admins')->controller(AdminController::class)->group(function () {
                     Route::get('/', 'index');
                     Route::post('/store', 'store');
@@ -65,7 +64,7 @@ Route::group(
                     Route::post('/update', 'update');
                     Route::get('/delete/{id}', 'delete');
                 });
-                // });
+             
             });
         });
     }
